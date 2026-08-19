@@ -2047,12 +2047,48 @@ button {
     font-size: 10px;
   }
 
+  .hero-meadow-section {
+    min-height: 100svh;
+    min-height: 100dvh;
+    padding-top: 75px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .hero-meadow-poster,
+  .hero-meadow-backdrop {
+    object-position: center 60%;
+  }
+
+  .hero-sky-overlay {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    padding: 10px 16px 0;
+    margin-bottom: auto;
+    z-index: 2;
+  }
+
   .hero-sky-title {
-    font-size: clamp(3.2rem, 15vw, 6rem);
+    font-size: clamp(2.6rem, 11vw, 4rem);
+    line-height: 0.92;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8), 0 0 35px rgba(56, 189, 248, 0.3);
   }
 
   .hero-sky-subtitle {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
+    line-height: 1.35;
+    margin-top: 6px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+  }
+
+  .hero-director-deck-container {
+    padding: 0 12px;
+    margin-top: auto;
+    z-index: 10;
   }
 
   .section-title-large {
