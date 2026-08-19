@@ -125,19 +125,33 @@ button {
 
 .nav-capsule-wrap {
   pointer-events: auto;
-  background: rgba(8, 12, 18, 0.82);
-  backdrop-filter: blur(28px) saturate(180%);
-  -webkit-backdrop-filter: blur(28px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 100%), rgba(10, 14, 22, 0.68);
+  backdrop-filter: blur(40px) saturate(220%) brightness(115%);
+  -webkit-backdrop-filter: blur(40px) saturate(220%) brightness(115%);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.5); /* Apple liquid top specular refraction */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-pill);
   padding: 8px 12px 8px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 14px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75), 0 0 35px rgba(56, 189, 248, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65), 
+              0 0 40px rgba(56, 189, 248, 0.18), 
+              inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.55), 
+              inset 0 -1.5px 1.5px 0 rgba(0, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-capsule-wrap:hover {
+  border-color: rgba(56, 189, 248, 0.4);
+  border-top-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 30px 75px rgba(0, 0, 0, 0.75), 
+              0 0 50px rgba(56, 189, 248, 0.28), 
+              inset 0 2px 2px 0 rgba(255, 255, 255, 0.7);
 }
 
 /* Brand Group */
@@ -502,15 +516,18 @@ button {
   top: 14px;
   left: 12px;
   right: 12px;
-  background: rgba(12, 16, 24, 0.97);
-  backdrop-filter: blur(32px) saturate(200%);
-  -webkit-backdrop-filter: blur(32px) saturate(200%);
-  border: 1px solid rgba(56, 189, 248, 0.35);
-  border-radius: 22px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.04) 100%), rgba(12, 16, 24, 0.78);
+  backdrop-filter: blur(40px) saturate(220%) brightness(115%);
+  -webkit-backdrop-filter: blur(40px) saturate(220%) brightness(115%);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.55);
+  border-radius: 24px;
   padding: 18px 16px;
-  box-shadow: 0 25px 75px rgba(0, 0, 0, 0.95), 0 0 45px rgba(56, 189, 248, 0.2);
+  box-shadow: 0 25px 75px rgba(0, 0, 0, 0.85), 
+              0 0 50px rgba(56, 189, 248, 0.25), 
+              inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.6);
   transform: translateY(-16px) scale(0.97);
-  transition: transform 0.28s var(--ease-spring);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .mobile-nav-drawer.open .mobile-drawer-card {
@@ -714,25 +731,33 @@ button {
 }
 
 .hero-director-deck-card {
-  background: rgba(10, 14, 22, 0.92);
-  backdrop-filter: blur(28px) saturate(180%);
-  -webkit-backdrop-filter: blur(28px) saturate(180%);
-  border: 1px solid rgba(56, 189, 248, 0.3);
-  border-radius: 22px;
-  padding: 14px 22px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 100%), rgba(10, 14, 22, 0.7);
+  backdrop-filter: blur(40px) saturate(220%) brightness(115%);
+  -webkit-backdrop-filter: blur(40px) saturate(220%) brightness(115%);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.52); /* Apple liquid top specular highlight */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 26px;
+  padding: 15px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 18px;
-  box-shadow: 0 20px 65px rgba(0, 0, 0, 0.88), 0 0 45px rgba(56, 189, 248, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.75), 
+              0 0 50px rgba(56, 189, 248, 0.2), 
+              inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.6), 
+              inset 0 -1.5px 1.5px 0 rgba(0, 0, 0, 0.35);
   position: relative;
   overflow: hidden;
-  transition: all 0.3s var(--ease-spring);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .hero-director-deck-card:hover {
-  border-color: rgba(56, 189, 248, 0.55);
-  box-shadow: 0 25px 75px rgba(0, 0, 0, 0.92), 0 0 55px rgba(56, 189, 248, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  border-color: rgba(56, 189, 248, 0.45);
+  border-top-color: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 32px 85px rgba(0, 0, 0, 0.82), 
+              0 0 65px rgba(56, 189, 248, 0.3), 
+              inset 0 2px 2px 0 rgba(255, 255, 255, 0.8);
 }
 
 .deck-laser-beam {
@@ -929,13 +954,23 @@ button {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(14, 18, 26, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.35);
+  border-radius: 14px;
   padding: 6px 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.12);
-  transition: all 0.3s var(--ease-spring);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
+}
+
+.deck-tool-module:hover {
+  transform: translateY(-3px) scale(1.04);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(56, 189, 248, 0.45);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 20px rgba(56, 189, 248, 0.25);
 }
 
 .deck-tool-module:hover {
