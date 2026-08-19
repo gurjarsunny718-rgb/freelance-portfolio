@@ -55,6 +55,7 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
   background-color: var(--bg-deep);
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -64,6 +65,28 @@ body {
   line-height: 1.55;
   overflow-x: hidden;
   position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Custom Sleek Obsidian Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080a0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.25);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(56, 189, 248, 0.5);
 }
 
 .container {
@@ -1338,15 +1361,19 @@ button {
   border-radius: var(--radius-lg);
   overflow: hidden;
   cursor: pointer;
-  transition: all 0.3s var(--ease-spring);
+  transition: transform 0.3s var(--ease-spring), border-color 0.25s ease, box-shadow 0.25s ease;
   display: flex;
   flex-direction: column;
   position: relative;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  content-visibility: auto;
+  contain-intrinsic-size: 280px 500px;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .reel-phone-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-8px) translateZ(0);
   border-color: var(--sky-blue);
   box-shadow: 0 25px 65px rgba(0, 0, 0, 0.8), 0 0 35px var(--sky-blue-glow);
 }

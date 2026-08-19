@@ -58,30 +58,38 @@ function initCreativeNavbar() {
 }
 
 /* ==========================================================================
-   2. SCROLL SPY FOR FLOATING CAPSULE NAVBAR
+   2. SCROLL SPY FOR FLOATING CAPSULE NAVBAR (120HZ rAF THROTTLED)
    ========================================================================== */
 function initScrollSpy() {
   const sections = document.querySelectorAll('section[id]');
   const navItems = document.querySelectorAll('.nav-link-btn');
+  let ticking = false;
 
   window.addEventListener('scroll', () => {
-    let current = '';
-    const scrollY = window.pageYOffset + 200;
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        let current = '';
+        const scrollY = window.pageYOffset + 200;
 
-    sections.forEach(section => {
-      const top = section.offsetTop;
-      const height = section.offsetHeight;
-      if (scrollY >= top && scrollY < top + height) {
-        current = section.getAttribute('id');
-      }
-    });
+        sections.forEach(section => {
+          const top = section.offsetTop;
+          const height = section.offsetHeight;
+          if (scrollY >= top && scrollY < top + height) {
+            current = section.getAttribute('id');
+          }
+        });
 
-    navItems.forEach(item => {
-      item.classList.remove('active');
-      if (item.getAttribute('href') === `#${current}`) {
-        item.classList.add('active');
-      }
-    });
+        navItems.forEach(item => {
+          if (item.getAttribute('href') === `#${current}`) {
+            item.classList.add('active');
+          } else {
+            item.classList.remove('active');
+          }
+        });
+        ticking = false;
+      });
+      ticking = true;
+    }
   }, { passive: true });
 }
 
@@ -360,6 +368,8 @@ function initVideoAutoplayObserver() {
     vid.playsInline = true;
     vid.setAttribute('playsinline', '');
     vid.setAttribute('webkit-playsinline', '');
+    vid.setAttribute('disablePictureInPicture', '');
+    vid.setAttribute('disableRemotePlayback', '');
     observer.observe(vid);
   });
 }
