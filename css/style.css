@@ -2199,9 +2199,15 @@ button {
   }
 
   .deck-avatar-outer-wrap {
-    width: 52px;
-    height: 52px;
+    width: 54px;
+    height: 54px;
     flex-shrink: 0;
+  }
+
+  .deck-avatar-outer-wrap .deck-rec-badge,
+  .deck-avatar-outer-wrap .deck-exp-badge,
+  .deck-avatar-outer-wrap .deck-lut-badge {
+    display: none !important;
   }
 
   .deck-creator-info {
