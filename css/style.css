@@ -211,12 +211,20 @@ button {
 }
 
 .brand-name {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 1.15rem;
-  font-weight: 900;
-  color: var(--text-pure);
-  letter-spacing: -0.01em;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffffff 15%, #bae6fd 60%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.02em;
   line-height: 1.1;
+  filter: drop-shadow(0 2px 8px rgba(56, 189, 248, 0.3));
+  transition: filter 0.3s ease;
+}
+
+.brand-monogram-lockup:hover .brand-name {
+  filter: drop-shadow(0 2px 14px rgba(56, 189, 248, 0.65));
 }
 
 .brand-status-line {
@@ -549,10 +557,14 @@ button {
 }
 
 .drawer-brand-name {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 1.15rem;
-  color: #ffffff;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffffff 15%, #bae6fd 60%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   line-height: 1.1;
+  filter: drop-shadow(0 2px 8px rgba(56, 189, 248, 0.3));
 }
 
 .drawer-status {
@@ -884,12 +896,15 @@ button {
 
 .deck-creator-name {
   font-family: var(--font-display);
-  font-size: 1.55rem;
-  font-weight: 400;
-  color: var(--text-pure);
-  letter-spacing: -0.01em;
-  line-height: 1.1;
-  margin-bottom: 1px;
+  font-size: 1.7rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ffffff 10%, #e0f2fe 50%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.015em;
+  line-height: 1.05;
+  margin-bottom: 2px;
+  filter: drop-shadow(0 2px 12px rgba(56, 189, 248, 0.35));
 }
 
 .deck-creator-role {
