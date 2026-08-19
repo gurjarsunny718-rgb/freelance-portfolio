@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   initCreativeNavbar();
+  initMobileNavDrawer();
   initScrollSpy();
   initSoundFX();
   renderReelsMatrix();
@@ -55,6 +56,52 @@ function initCreativeNavbar() {
       if (isSoundEnabled) playSound('click');
     });
   }
+}
+
+/* ==========================================================================
+   1B. MOBILE NAVIGATION DRAWER
+   ========================================================================== */
+function initMobileNavDrawer() {
+  const toggleBtn = document.getElementById('mobileNavToggle');
+  const drawer = document.getElementById('mobileNavDrawer');
+  const closeBtn = document.getElementById('mobileDrawerClose');
+  const backdrop = document.getElementById('mobileDrawerBackdrop');
+  const drawerLinks = document.querySelectorAll('.mobile-drawer-link');
+
+  if (!toggleBtn || !drawer) return;
+
+  function openDrawer() {
+    drawer.classList.add('open');
+    drawer.setAttribute('aria-hidden', 'false');
+    toggleBtn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+    if (typeof playSound === 'function') playSound('click');
+  }
+
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    drawer.setAttribute('aria-hidden', 'true');
+    toggleBtn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    if (drawer.classList.contains('open')) {
+      closeDrawer();
+    } else {
+      openDrawer();
+    }
+  });
+
+  if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+  if (backdrop) backdrop.addEventListener('click', closeDrawer);
+
+  drawerLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      closeDrawer();
+      if (typeof playSound === 'function') playSound('whoosh');
+    });
+  });
 }
 
 /* ==========================================================================
