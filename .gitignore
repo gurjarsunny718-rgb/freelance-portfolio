@@ -1,0 +1,7 @@
+# Scratch & Temporary Folders
+scratch_*
+*.log
+.tempmediaStorage/
+.DS_Store
+Thumbs.db
+node_modules/
