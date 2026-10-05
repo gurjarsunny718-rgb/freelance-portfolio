@@ -36,16 +36,6 @@ function initCreativeNavbar() {
   updateClock();
   setInterval(updateClock, 1000);
 
-  // Micro Scroll Progress Line
-  const progressBar = document.getElementById('navScrollProgress');
-  window.addEventListener('scroll', () => {
-    if (!progressBar) return;
-    const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-    progressBar.style.width = `${Math.min(100, Math.max(0, scrollPercent))}%`;
-  }, { passive: true });
-
   // Audio Equalizer Waveform Toggle
   const soundToggle = document.getElementById('navSoundToggle');
   if (soundToggle) {
@@ -106,23 +96,34 @@ function initMobileNavDrawer() {
 }
 
 /* ==========================================================================
-   2. SCROLL SPY FOR FLOATING CAPSULE NAVBAR (120HZ rAF THROTTLED)
+   2. HIGH-PERFORMANCE UNIFIED SCROLL ENGINE (120Hz rAF THROTTLED)
    ========================================================================== */
 function initScrollSpy() {
   const sections = document.querySelectorAll('section[id]');
   const navItems = document.querySelectorAll('.nav-link-btn');
+  const progressBar = document.getElementById('navScrollProgress');
   let ticking = false;
 
-  window.addEventListener('scroll', () => {
+  function onScroll() {
     if (!ticking) {
       window.requestAnimationFrame(() => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        
+        // 1. Smooth Scroll Progress Laser
+        if (progressBar && docHeight > 0) {
+          const scrollPercent = (scrollTop / docHeight) * 100;
+          progressBar.style.width = `${Math.min(100, Math.max(0, scrollPercent))}%`;
+        }
+
+        // 2. Section Scroll Spy Indicator
         let current = '';
-        const scrollY = window.pageYOffset + 200;
+        const scrollOffset = scrollTop + 200;
 
         sections.forEach(section => {
           const top = section.offsetTop;
           const height = section.offsetHeight;
-          if (scrollY >= top && scrollY < top + height) {
+          if (scrollOffset >= top && scrollOffset < top + height) {
             current = section.getAttribute('id');
           }
         });
@@ -134,11 +135,15 @@ function initScrollSpy() {
             item.classList.remove('active');
           }
         });
+
         ticking = false;
       });
       ticking = true;
     }
-  }, { passive: true });
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll(); // initial run
 }
 
 /* ==========================================================================
@@ -195,89 +200,7 @@ function initSoundFX() {
 }
 
 /* ==========================================================================
-   3. PROCEDURAL 9:16 VERTICAL REEL CANVAS ENGINE
-   ========================================================================== */
-function createReelCanvas(canvas, theme = 'cyberpunk') {
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  const width = (canvas.width = canvas.offsetWidth || 360);
-  const height = (canvas.height = canvas.offsetHeight || 640);
-
-  let frame = Math.floor(Math.random() * 100);
-  let animId;
-
-  const particles = Array.from({ length: 24 }, () => ({
-    x: Math.random() * width,
-    y: Math.random() * height,
-    size: Math.random() * 2 + 1,
-    speedX: (Math.random() - 0.5) * 1.2,
-    speedY: (Math.random() - 0.5) * 1.8
-  }));
-
-  function loop() {
-    frame++;
-    ctx.fillStyle = '#080a0f';
-    ctx.fillRect(0, 0, width, height);
-
-    // Deep Neon Gradient
-    const grad = ctx.createLinearGradient(0, 0, width, height);
-    if (theme === 'cyberpunk') {
-      grad.addColorStop(0, 'rgba(56, 189, 248, 0.3)');
-      grad.addColorStop(0.5, 'rgba(8, 10, 15, 0.85)');
-      grad.addColorStop(1, 'rgba(168, 85, 247, 0.25)');
-    } else if (theme === 'matrix') {
-      grad.addColorStop(0, 'rgba(34, 197, 94, 0.3)');
-      grad.addColorStop(0.5, 'rgba(8, 10, 15, 0.85)');
-      grad.addColorStop(1, 'rgba(56, 189, 248, 0.25)');
-    } else {
-      grad.addColorStop(0, 'rgba(245, 158, 11, 0.3)');
-      grad.addColorStop(0.5, 'rgba(8, 10, 15, 0.85)');
-      grad.addColorStop(1, 'rgba(239, 68, 68, 0.25)');
-    }
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, width, height);
-
-    // 9:16 Vertical Grid Lines
-    ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
-    ctx.lineWidth = 1;
-    for (let y = 0; y < height; y += 40) {
-      ctx.beginPath();
-      ctx.moveTo(0, y);
-      ctx.lineTo(width, y);
-      ctx.stroke();
-    }
-
-    // Floating Particles
-    particles.forEach(p => {
-      p.x += p.speedX;
-      p.y += p.speedY;
-      if (p.x < 0) p.x = width;
-      if (p.x > width) p.x = 0;
-      if (p.y < 0) p.y = height;
-      if (p.y > height) p.y = 0;
-
-      ctx.fillStyle = theme === 'matrix' ? '#22c55e' : '#38bdf8';
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      ctx.fill();
-    });
-
-    // Timecode
-    ctx.font = '10px "JetBrains Mono", monospace';
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
-    const sec = Math.floor(frame / 60) % 60;
-    const fr = Math.floor(frame % 60);
-    ctx.fillText(`9:16 00:${String(sec).padStart(2, '0')}:${String(fr).padStart(2, '0')}`, 12, height - 12);
-
-    animId = requestAnimationFrame(loop);
-  }
-
-  loop();
-  return { stop: () => cancelAnimationFrame(animId) };
-}
-
-/* ==========================================================================
-   4. RENDER 10 VIRAL SHORT-FORM REELS
+   3. RENDER 10 VIRAL SHORT-FORM REELS
    ========================================================================== */
 function renderReelsMatrix() {
   const grid = document.getElementById('reelsMatrixGrid');
@@ -340,7 +263,7 @@ function renderReelsMatrix() {
 }
 
 /* ==========================================================================
-   5. RENDER WEDDING EDITS & CINEMATIC FILMS
+   4. RENDER WEDDING EDITS & CINEMATIC FILMS
    ========================================================================== */
 function renderWeddingMatrix() {
   const grid = document.getElementById('weddingMatrixGrid');
@@ -403,13 +326,13 @@ function initVideoAutoplayObserver() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       const vid = entry.target;
-      if (entry.isIntersecting) {
+      if (entry.isIntersecting && !document.hidden) {
         vid.play().catch(() => {});
       } else {
         vid.pause();
       }
     });
-  }, { threshold: 0.15, rootMargin: '100px 0px' });
+  }, { threshold: 0.1, rootMargin: '120px 0px' });
 
   videos.forEach(vid => {
     vid.muted = true;
@@ -419,6 +342,20 @@ function initVideoAutoplayObserver() {
     vid.setAttribute('disablePictureInPicture', '');
     vid.setAttribute('disableRemotePlayback', '');
     observer.observe(vid);
+  });
+
+  // Battery and CPU optimization: pause when backgrounded
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      videos.forEach(v => v.pause());
+    } else {
+      videos.forEach(v => {
+        const r = v.getBoundingClientRect();
+        if (r.top < window.innerHeight && r.bottom > 0) {
+          v.play().catch(() => {});
+        }
+      });
+    }
   });
 }
 

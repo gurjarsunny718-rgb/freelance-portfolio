@@ -2026,11 +2026,13 @@ button {
 }
 
 /* ==========================================================================
-   (4) WORK EXPERIENCE (REELS CAREER TIMELINE)
+   (5) WORK EXPERIENCE (CAREER & CLIENT PARTNERSHIPS)
    ========================================================================== */
 .experience-creative-section {
   padding: 100px 0;
   border-top: 1px solid var(--border-subtle);
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 900px;
 }
 
 .exp-cards-grid {
@@ -2044,9 +2046,16 @@ button {
   background: var(--bg-card);
   border: 1px solid var(--border-card);
   border-radius: var(--radius-md);
-  padding: 32px;
-  transition: all 0.25s var(--ease-spring);
+  padding: 28px;
+  transition: transform 0.3s var(--ease-spring), border-color 0.3s ease, box-shadow 0.3s ease;
   position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+  contain: layout style;
+  transform: translateZ(0);
 }
 
 .exp-creative-card::before {
@@ -2055,49 +2064,243 @@ button {
   top: 0;
   left: 0;
   width: 100%;
-  height: 2px;
+  height: 3px;
   background: var(--border-subtle);
-  transition: background 0.25s ease;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .exp-creative-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--sky-blue);
+  transform: translateY(-5px);
 }
 
-.exp-creative-card:hover::before {
-  background: var(--sky-blue);
+/* Brand Accent Gradients */
+.exp-creative-card.exp-accent-blue:hover {
+  border-color: rgba(56, 189, 248, 0.5);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 25px rgba(56, 189, 248, 0.18);
+}
+.exp-creative-card.exp-accent-blue::before {
+  background: linear-gradient(90deg, #38bdf8, #0284c7);
+}
+
+.exp-creative-card.exp-accent-amber:hover {
+  border-color: rgba(245, 158, 11, 0.5);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 25px rgba(245, 158, 11, 0.18);
+}
+.exp-creative-card.exp-accent-amber::before {
+  background: linear-gradient(90deg, #f59e0b, #d97706);
+}
+
+.exp-creative-card.exp-accent-pink:hover {
+  border-color: rgba(236, 72, 153, 0.5);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 25px rgba(236, 72, 153, 0.18);
+}
+.exp-creative-card.exp-accent-pink::before {
+  background: linear-gradient(90deg, #ec4899, #a855f7);
+}
+
+.exp-creative-card.exp-accent-red:hover {
+  border-color: rgba(239, 68, 68, 0.5);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 25px rgba(239, 68, 68, 0.18);
+}
+.exp-creative-card.exp-accent-red::before {
+  background: linear-gradient(90deg, #ef4444, #f97316);
+}
+
+.exp-creative-card.exp-accent-green:hover {
+  border-color: rgba(34, 197, 94, 0.5);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 25px rgba(34, 197, 94, 0.18);
+}
+.exp-creative-card.exp-accent-green::before {
+  background: linear-gradient(90deg, #22c55e, #06b6d4);
+}
+
+.exp-creative-card.exp-accent-purple:hover {
+  border-color: rgba(168, 85, 247, 0.5);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 25px rgba(168, 85, 247, 0.18);
+}
+.exp-creative-card.exp-accent-purple::before {
+  background: linear-gradient(90deg, #a855f7, #6366f1);
+}
+
+.exp-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.exp-brand-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.exp-avatar-wrap {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  background: #0d121d;
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exp-avatar-wrap.foundation-icon {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(99, 102, 241, 0.2));
+  border-color: #a855f7;
+  color: #c084fc;
+  font-size: 18px;
+}
+
+.exp-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.exp-avatar-stack {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 58px;
+  height: 42px;
+  flex-shrink: 0;
+}
+
+.exp-avatar-stack .exp-avatar-img {
+  width: 36px;
+  height: 36px;
+  border: 2px solid #080a0f;
+  position: absolute;
+  top: 3px;
+  left: 0;
+}
+
+.exp-avatar-stack .exp-avatar-img.stack-offset {
+  left: 20px;
+  z-index: 2;
+}
+
+.exp-badge-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.exp-period-pill {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
 }
 
 .exp-card-number {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 800;
-  color: var(--sky-blue);
-  margin-bottom: 8px;
+  color: var(--text-muted);
 }
 
 .exp-card-title {
   font-family: var(--font-display);
-  font-size: 1.55rem;
-  font-weight: 400;
+  font-size: 1.45rem;
+  font-weight: 700;
   letter-spacing: -0.01em;
   color: var(--text-pure);
-  margin-bottom: 6px;
+  margin-bottom: 2px;
+  line-height: 1.2;
 }
 
-.exp-card-period {
+.exp-handle-link {
   font-family: var(--font-mono);
   font-size: 11px;
-  font-weight: 700;
+  color: var(--sky-blue);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  display: inline-block;
+}
+
+.exp-handle-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.exp-handle-link.static-handle {
+  color: #94a3b8;
+  cursor: default;
+}
+
+.exp-handle-link.static-handle:hover {
+  color: #94a3b8;
+  text-decoration: none;
+}
+
+.exp-handles-duo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.exp-handle-sep {
   color: var(--text-muted);
-  margin-bottom: 14px;
+  font-size: 10px;
+}
+
+.exp-card-role {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  color: #94a3b8;
+  background: rgba(255, 255, 255, 0.035);
+  padding: 5px 10px;
+  border-radius: 6px;
+  margin: 10px 0 12px 0;
+  border-left: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .exp-card-text {
-  font-size: 14px;
+  font-size: 13.5px;
   color: var(--text-secondary);
   line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.exp-metrics-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.08);
+}
+
+.exp-metric-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: #cbd5e1;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.exp-metric-tag strong {
+  color: #ffffff;
+  font-weight: 700;
 }
 
 /* ==========================================================================
@@ -2591,6 +2794,28 @@ button {
 
   .hero-tool-text {
     font-size: 11px;
+  }
+
+  .exp-creative-card {
+    padding: 22px 18px;
+  }
+
+  .exp-card-title {
+    font-size: 1.25rem;
+  }
+
+  .exp-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .exp-badge-group {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 4px;
   }
 }
 
