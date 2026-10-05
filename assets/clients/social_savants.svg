@@ -1,0 +1,25 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="ssGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#38bdf8"/>
+            <stop offset="50%" stop-color="#00f2fe"/>
+            <stop offset="100%" stop-color="#0284c7"/>
+          </linearGradient>
+          <linearGradient id="ssBg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0c192e"/>
+            <stop offset="100%" stop-color="#030712"/>
+          </linearGradient>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+        <rect width="200" height="200" rx="100" fill="url(#ssBg)"/>
+        <circle cx="100" cy="100" r="94" stroke="url(#ssGrad)" stroke-width="4" fill="none" opacity="0.8"/>
+        <!-- Interlocking S Monogram -->
+        <path d="M72,68 C72,56 84,48 100,48 C116,48 128,56 128,68 C128,82 108,88 96,94 C80,102 70,110 70,126 C70,144 84,152 100,152 C118,152 130,142 130,128" fill="none" stroke="url(#ssGrad)" stroke-width="14" stroke-linecap="round" filter="url(#glow)"/>
+        <text x="100" y="174" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="900" fill="#bae6fd" text-anchor="middle" letter-spacing="3">SOCIAL SAVANTS</text>
+      </svg>

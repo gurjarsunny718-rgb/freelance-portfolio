@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSoundFX();
   renderReelsMatrix();
   renderWeddingMatrix();
+  initChannelFilterTabs();
   initContactChannels();
   initCinemaModal();
   initVideoAutoplayObserver();
@@ -525,3 +526,34 @@ function showToast(msg) {
   toast.classList.add('show');
   setTimeout(() => toast.classList.remove('show'), 3500);
 }
+
+/* ==========================================================================
+   7. MANAGED CHANNELS CATEGORY FILTER TABS
+   ========================================================================== */
+function initChannelFilterTabs() {
+  const filterBtns = document.querySelectorAll('.filter-tab-btn');
+  const channelCards = document.querySelectorAll('#managedChannelsGrid .managed-channel-card');
+
+  if (!filterBtns.length || !channelCards.length) return;
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      if (typeof playSound === 'function') playSound('click');
+
+      const filter = btn.getAttribute('data-filter');
+
+      channelCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        if (filter === 'all' || category === filter || category === 'all') {
+          card.classList.remove('filtered-out');
+        } else {
+          card.classList.add('filtered-out');
+        }
+      });
+    });
+  });
+}
+

@@ -2781,6 +2781,15 @@ button {
   margin-bottom: 24px;
 }
 
+.channels-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
 .ig-gradient-badge {
   display: inline-block;
   font-family: var(--font-mono);
@@ -2791,7 +2800,17 @@ button {
   background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
   padding: 3px 10px;
   border-radius: var(--radius-pill);
-  margin-bottom: 10px;
+}
+
+.channels-count-pill {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--sky-blue);
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
 }
 
 .channels-column-title {
@@ -2806,6 +2825,43 @@ button {
   font-size: 13.5px;
   color: var(--text-secondary);
   line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+/* Category Filter Tabs */
+.channel-filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.filter-tab-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  outline: none;
+}
+
+.filter-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.09);
+  color: var(--text-pure);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.filter-tab-btn.active {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(168, 85, 247, 0.2));
+  border-color: var(--sky-blue);
+  color: #ffffff;
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.25);
 }
 
 .managed-channels-grid {
@@ -2827,6 +2883,10 @@ button {
   position: relative;
   overflow: hidden;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+}
+
+.managed-channel-card.filtered-out {
+  display: none !important;
 }
 
 .managed-channel-card:hover {
@@ -2898,6 +2958,14 @@ button {
 .channel-avatar-wrap.custom-glow {
   border-color: #a855f7;
   box-shadow: 0 0 14px rgba(168, 85, 247, 0.4);
+}
+
+.channel-avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
 }
 
 .channel-avatar-initials {
@@ -3025,7 +3093,32 @@ button {
   font-size: 12.5px;
   color: var(--text-secondary);
   line-height: 1.55;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
+}
+
+.channel-metrics-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px dashed rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-bottom: 14px;
+}
+
+.metric-item {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: #cbd5e1;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.metric-item strong {
+  color: #ffffff;
+  font-weight: 700;
 }
 
 .channel-chips-row {

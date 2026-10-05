@@ -541,18 +541,30 @@
           <!-- Column B: Managed Instagram Channels (Real Works) -->
           <div class="about-channels-col">
             <div class="channels-column-header">
-              <span class="ig-gradient-badge">📸 INSTAGRAM WORKSPACES</span>
+              <div class="channels-header-top">
+                <span class="ig-gradient-badge">📸 INSTAGRAM WORKSPACES</span>
+                <span class="channels-count-pill">8 Verified Accounts</span>
+              </div>
               <h4 class="channels-column-title">Client Channels I Edit & Manage</h4>
-              <p class="channels-column-sub">Real Instagram accounts powered by my short-form video editing and post-production engine.</p>
+              <p class="channels-column-sub">Real Instagram accounts powered by my short-form video editing, color grading, and daily content pipelines.</p>
+
+              <!-- Creative Interactive Category Filter Tabs -->
+              <div class="channel-filter-tabs" id="channelFilterTabs">
+                <button class="filter-tab-btn active" data-filter="all">All Workspaces (8)</button>
+                <button class="filter-tab-btn" data-filter="agency">🏢 Agency & Media</button>
+                <button class="filter-tab-btn" data-filter="luxury">💍 Wedding & Luxury</button>
+                <button class="filter-tab-btn" data-filter="fitness">💪 Fitness & Gym</button>
+                <button class="filter-tab-btn" data-filter="education">🎓 Education</button>
+              </div>
             </div>
 
-            <div class="managed-channels-grid">
+            <div class="managed-channels-grid" id="managedChannelsGrid">
               
               <!-- Channel 1: Social Savants -->
-              <div class="managed-channel-card">
+              <div class="managed-channel-card" data-category="agency">
                 <div class="channel-card-top">
                   <div class="channel-avatar-wrap social-savants-glow">
-                    <span class="channel-avatar-initials">SS</span>
+                    <img src="assets/clients/social_savants.svg" alt="Social Savants Official Logo" class="channel-avatar-img">
                     <span class="channel-verified-check" title="Managed Brand">✓</span>
                   </div>
                   <div class="channel-info-meta">
@@ -560,29 +572,34 @@
                       <h5 class="channel-brand-name">Social Savants</h5>
                       <span class="channel-status-pill live">● Active Client</span>
                     </div>
-                    <a href="https://instagram.com/socialsavants" target="_blank" rel="noopener noreferrer" class="channel-handle-link">@socialsavants ↗</a>
+                    <a href="https://instagram.com/social_savants" target="_blank" rel="noopener noreferrer" class="channel-handle-link">@social_savants ↗</a>
                   </div>
                 </div>
                 <div class="channel-role-banner">Lead Short-Form Editor & Viral Strategist</div>
                 <p class="channel-card-desc">
                   Managing rapid-fire reel production for creative entrepreneurs, personal branding, velocity speed curves, kinetic typography, and high-CTR covers.
                 </p>
+                <div class="channel-metrics-bar">
+                  <span class="metric-item">🔥 <strong>2.8M+</strong> Reach</span>
+                  <span class="metric-item">🎬 <strong>45+</strong> Reels</span>
+                  <span class="metric-item">⚡ <strong>94%</strong> Retention</span>
+                </div>
                 <div class="channel-chips-row">
                   <span class="channel-tag">Agency Content</span>
                   <span class="channel-tag">Velocity Curves</span>
                   <span class="channel-tag">High-CTR Reels</span>
                 </div>
-                <a href="https://instagram.com/socialsavants" target="_blank" rel="noopener noreferrer" class="btn-channel-visit">
+                <a href="https://instagram.com/social_savants" target="_blank" rel="noopener noreferrer" class="btn-channel-visit">
                   <span>View Instagram Work</span>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                 </a>
               </div>
 
               <!-- Channel 2: DR Events -->
-              <div class="managed-channel-card">
+              <div class="managed-channel-card" data-category="luxury">
                 <div class="channel-card-top">
                   <div class="channel-avatar-wrap dr-events-glow">
-                    <span class="channel-avatar-initials">DR</span>
+                    <img src="assets/clients/drevents.svg" alt="DR Events Official Logo" class="channel-avatar-img">
                     <span class="channel-verified-check" title="Managed Brand">✓</span>
                   </div>
                   <div class="channel-info-meta">
@@ -597,6 +614,11 @@
                 <p class="channel-card-desc">
                   Editing luxury wedding highlights, emotional vows, sangeet teasers, and royal event reels with 4K DaVinci Resolve color grading and acoustic mastering.
                 </p>
+                <div class="channel-metrics-bar">
+                  <span class="metric-item">💍 <strong>4K</strong> Cinema Teasers</span>
+                  <span class="metric-item">🎨 <strong>DaVinci</strong> LUTs</span>
+                  <span class="metric-item">✨ <strong>100%</strong> Royal Grade</span>
+                </div>
                 <div class="channel-chips-row">
                   <span class="channel-tag">Wedding Films</span>
                   <span class="channel-tag">Cinema LUTs</span>
@@ -608,41 +630,11 @@
                 </a>
               </div>
 
-              <!-- Channel 3: Aimers Institute -->
-              <div class="managed-channel-card">
-                <div class="channel-card-top">
-                  <div class="channel-avatar-wrap aimers-glow">
-                    <span class="channel-avatar-initials">AI</span>
-                    <span class="channel-verified-check" title="Managed Brand">✓</span>
-                  </div>
-                  <div class="channel-info-meta">
-                    <div class="channel-handle-row">
-                      <h5 class="channel-brand-name">Aimers Institute</h5>
-                      <span class="channel-status-pill live">● Active Client</span>
-                    </div>
-                    <a href="https://instagram.com/aimers" target="_blank" rel="noopener noreferrer" class="channel-handle-link">@aimers ↗</a>
-                  </div>
-                </div>
-                <div class="channel-role-banner">Educational & Promotional Media Specialist</div>
-                <p class="channel-card-desc">
-                  Structuring talking-head masterclasses, student spotlight shorts, multi-cam educational breakdowns, and retention-focused promo reels.
-                </p>
-                <div class="channel-chips-row">
-                  <span class="channel-tag">Educational Shorts</span>
-                  <span class="channel-tag">Multi-Cam</span>
-                  <span class="channel-tag">Promos</span>
-                </div>
-                <a href="https://instagram.com/aimers" target="_blank" rel="noopener noreferrer" class="btn-channel-visit">
-                  <span>View Instagram Work</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                </a>
-              </div>
-
-              <!-- Channel 4: Harbour Udaipur -->
-              <div class="managed-channel-card">
+              <!-- Channel 3: Harbour Udaipur -->
+              <div class="managed-channel-card" data-category="luxury">
                 <div class="channel-card-top">
                   <div class="channel-avatar-wrap harbour-udaipur-glow">
-                    <span class="channel-avatar-initials">HU</span>
+                    <img src="assets/clients/harbourudaipur.svg" alt="Harbour Udaipur Official Logo" class="channel-avatar-img">
                     <span class="channel-verified-check" title="Managed Brand">✓</span>
                   </div>
                   <div class="channel-info-meta">
@@ -657,6 +649,11 @@
                 <p class="channel-card-desc">
                   Producing high-energy nightlife reels, ambient dining aesthetics, cocktail mixology cuts, DJ event teasers, and viral luxury hospitality promos.
                 </p>
+                <div class="channel-metrics-bar">
+                  <span class="metric-item">🍸 <strong>Nightlife</strong> Promos</span>
+                  <span class="metric-item">🔥 <strong>1.5M+</strong> Impressions</span>
+                  <span class="metric-item">🎧 <strong>Beat-Drop</strong> Edits</span>
+                </div>
                 <div class="channel-chips-row">
                   <span class="channel-tag">Hospitality Media</span>
                   <span class="channel-tag">Nightlife Promos</span>
@@ -668,11 +665,11 @@
                 </a>
               </div>
 
-              <!-- Channel 5: Devi Palace Resort Udaipur -->
-              <div class="managed-channel-card">
+              <!-- Channel 4: Devi Palace Resort Udaipur -->
+              <div class="managed-channel-card" data-category="luxury">
                 <div class="channel-card-top">
                   <div class="channel-avatar-wrap devi-palace-glow">
-                    <span class="channel-avatar-initials">DP</span>
+                    <img src="assets/clients/devipalaceresortudr.svg" alt="Devi Palace Resort Official Logo" class="channel-avatar-img">
                     <span class="channel-verified-check" title="Managed Brand">✓</span>
                   </div>
                   <div class="channel-info-meta">
@@ -687,6 +684,11 @@
                 <p class="channel-card-desc">
                   Editing cinematic 4K drone reels, royal palace hospitality showcases, pool & fine dining ambiance, and destination wedding venue teaser reels.
                 </p>
+                <div class="channel-metrics-bar">
+                  <span class="metric-item">🏰 <strong>Heritage</strong> Ambiance</span>
+                  <span class="metric-item">🚁 <strong>4K Drone</strong> Cinematics</span>
+                  <span class="metric-item">✨ <strong>Destination</strong> Venues</span>
+                </div>
                 <div class="channel-chips-row">
                   <span class="channel-tag">Royal Resort</span>
                   <span class="channel-tag">Destination Weddings</span>
@@ -698,11 +700,11 @@
                 </a>
               </div>
 
-              <!-- Channel 6: RK Fitness Club 2.0 -->
-              <div class="managed-channel-card">
+              <!-- Channel 5: RK Fitness Club 2.0 -->
+              <div class="managed-channel-card" data-category="fitness">
                 <div class="channel-card-top">
                   <div class="channel-avatar-wrap rk-fitness-glow">
-                    <span class="channel-avatar-initials">RK</span>
+                    <img src="assets/clients/rk_fitness_club_2_0.svg" alt="RK Fitness Club 2.0 Official Logo" class="channel-avatar-img">
                     <span class="channel-verified-check" title="Managed Brand">✓</span>
                   </div>
                   <div class="channel-info-meta">
@@ -717,6 +719,11 @@
                 <p class="channel-card-desc">
                   Engineering explosive gym workout montages, heavy lift beat-synced drops, transformation teasers, and high-energy community fitness reels.
                 </p>
+                <div class="channel-metrics-bar">
+                  <span class="metric-item">💪 <strong>Heavy-Lift</strong> Drops</span>
+                  <span class="metric-item">⚡ <strong>Speed-Curve</strong> Montages</span>
+                  <span class="metric-item">🔥 <strong>Viral</strong> Gym Hype</span>
+                </div>
                 <div class="channel-chips-row">
                   <span class="channel-tag">Fitness Reels</span>
                   <span class="channel-tag">Beat-Sync Edits</span>
@@ -728,11 +735,11 @@
                 </a>
               </div>
 
-              <!-- Channel 7: RK Fitness Club by Mr. Vyas -->
-              <div class="managed-channel-card">
+              <!-- Channel 6: RK Fitness by Mr. Vyas -->
+              <div class="managed-channel-card" data-category="fitness">
                 <div class="channel-card-top">
                   <div class="channel-avatar-wrap rk-coach-glow">
-                    <span class="channel-avatar-initials">MV</span>
+                    <img src="assets/clients/rk_fitness_club_by_mr_vyas.svg" alt="RK Fitness by Mr. Vyas Official Logo" class="channel-avatar-img">
                     <span class="channel-verified-check" title="Managed Brand">✓</span>
                   </div>
                   <div class="channel-info-meta">
@@ -747,6 +754,11 @@
                 <p class="channel-card-desc">
                   Editing talking-head training breakdowns, athlete mentorship shorts, body transformation case studies, and motivational gym content.
                 </p>
+                <div class="channel-metrics-bar">
+                  <span class="metric-item">🏋️‍♂️ <strong>Athlete</strong> Mentorship</span>
+                  <span class="metric-item">📈 <strong>Case Studies</strong></span>
+                  <span class="metric-item">🎯 <strong>High-CTR</strong> Text</span>
+                </div>
                 <div class="channel-chips-row">
                   <span class="channel-tag">Athlete Branding</span>
                   <span class="channel-tag">Transformations</span>
@@ -758,11 +770,11 @@
                 </a>
               </div>
 
-              <!-- Channel 8: Medhaavee Udaipur -->
-              <div class="managed-channel-card">
+              <!-- Channel 7: Medhaavee Udaipur -->
+              <div class="managed-channel-card" data-category="education">
                 <div class="channel-card-top">
                   <div class="channel-avatar-wrap medhaavee-glow">
-                    <span class="channel-avatar-initials">MU</span>
+                    <img src="assets/clients/medhaaveeudaipur.svg" alt="Medhaavee Udaipur Official Logo" class="channel-avatar-img">
                     <span class="channel-verified-check" title="Managed Brand">✓</span>
                   </div>
                   <div class="channel-info-meta">
@@ -777,6 +789,11 @@
                 <p class="channel-card-desc">
                   Structuring student success celebrations, faculty lecture shorts, classroom energy reels, and academic enrollment campaign media.
                 </p>
+                <div class="channel-metrics-bar">
+                  <span class="metric-item">🎓 <strong>Student</strong> Spotlight</span>
+                  <span class="metric-item">📚 <strong>Lecture</strong> Shorts</span>
+                  <span class="metric-item">🚀 <strong>Enrollment</strong> Promos</span>
+                </div>
                 <div class="channel-chips-row">
                   <span class="channel-tag">Institute Promos</span>
                   <span class="channel-tag">Student Success</span>
@@ -788,8 +805,43 @@
                 </a>
               </div>
 
+              <!-- Channel 8: Aimers Institute -->
+              <div class="managed-channel-card" data-category="education">
+                <div class="channel-card-top">
+                  <div class="channel-avatar-wrap aimers-glow">
+                    <img src="assets/clients/aimersinstituteudr.svg" alt="Aimers Institute Official Logo" class="channel-avatar-img">
+                    <span class="channel-verified-check" title="Managed Brand">✓</span>
+                  </div>
+                  <div class="channel-info-meta">
+                    <div class="channel-handle-row">
+                      <h5 class="channel-brand-name">Aimers Institute</h5>
+                      <span class="channel-status-pill live">● Active Client</span>
+                    </div>
+                    <a href="https://instagram.com/aimersinstituteudr" target="_blank" rel="noopener noreferrer" class="channel-handle-link">@aimersinstituteudr ↗</a>
+                  </div>
+                </div>
+                <div class="channel-role-banner education">Educational & Promotional Media Specialist</div>
+                <p class="channel-card-desc">
+                  Structuring talking-head masterclasses, student spotlight shorts, multi-cam educational breakdowns, and retention-focused promo reels.
+                </p>
+                <div class="channel-metrics-bar">
+                  <span class="metric-item">🎯 <strong>Masterclass</strong> Cuts</span>
+                  <span class="metric-item">🎥 <strong>Multi-Cam</strong> Pacing</span>
+                  <span class="metric-item">⚡ <strong>Kinetic</strong> Captions</span>
+                </div>
+                <div class="channel-chips-row">
+                  <span class="channel-tag">Educational Shorts</span>
+                  <span class="channel-tag">Multi-Cam</span>
+                  <span class="channel-tag">Promos</span>
+                </div>
+                <a href="https://instagram.com/aimersinstituteudr" target="_blank" rel="noopener noreferrer" class="btn-channel-visit">
+                  <span>View Instagram Work</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+
               <!-- Channel 9: Creator Retainers & Custom Inquiries -->
-              <div class="managed-channel-card custom-retainer-card">
+              <div class="managed-channel-card custom-retainer-card" data-category="all">
                 <div class="channel-card-top">
                   <div class="channel-avatar-wrap custom-glow">
                     <span class="channel-avatar-initials">+</span>
@@ -806,6 +858,11 @@
                 <p class="channel-card-desc">
                   Looking for a dedicated video editor to manage your daily or weekly Instagram Reels? Get high-velocity edits, sound design, and custom graphics on demand.
                 </p>
+                <div class="channel-metrics-bar">
+                  <span class="metric-item">⚡ <strong>24h Express</strong> Delivery</span>
+                  <span class="metric-item">🔄 <strong>Unlimited</strong> Revisions</span>
+                  <span class="metric-item">📱 <strong>Daily</strong> Management</span>
+                </div>
                 <div class="channel-chips-row">
                   <span class="channel-tag">Monthly Retainer</span>
                   <span class="channel-tag">24h Turnaround</span>
