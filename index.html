@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
   <meta name="theme-color" content="#080a0f">
   <meta name="color-scheme" content="dark">
   <title>Sunny Gurjar — Viral Short-Form Reels & Video Editor | Portfolio 2026</title>
@@ -1149,7 +1149,7 @@
 
           <!-- Brief Form -->
           <form id="reelsBookingForm">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+            <div class="form-row-2col">
               <input type="text" class="form-terminal-input" placeholder="Your Name / Handle *" required>
               <input type="email" class="form-terminal-input" placeholder="Your Email Address *" required>
             </div>
@@ -1169,11 +1169,11 @@
     <div class="modal-cinema-stage">
       <div style="padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-card);">
         <h3 id="cinemaModalTitle" style="font-family: var(--font-display); font-size: 1.25rem; color: #fff;">Reel Title</h3>
-        <button id="cinemaModalClose" style="font-size: 18px; color: #fff; width: 32px; height: 32px; border: 1px solid var(--border-card); border-radius: 4px;">✕</button>
+        <button id="cinemaModalClose" style="font-size: 18px; color: #fff; width: 32px; height: 32px; border: 1px solid var(--border-card); border-radius: 4px; background: rgba(255,255,255,0.06); cursor: pointer;">✕</button>
       </div>
 
-      <div style="aspect-ratio: 9 / 16; background: #080a0f; position: relative; overflow: hidden;">
-        <video id="cinemaVideoPlayer" src="" controls autoplay loop playsinline style="width: 100%; height: 100%; object-fit: cover; min-height: 480px;"></video>
+      <div class="modal-video-container">
+        <video id="cinemaVideoPlayer" src="" controls autoplay loop playsinline webkit-playsinline disablepictureinpicture class="modal-video-element"></video>
       </div>
 
       <div style="padding: 16px 20px;">
