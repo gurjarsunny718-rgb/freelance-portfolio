@@ -1058,6 +1058,12 @@ button {
   color: #fbbf24;
 }
 
+.deck-client-badge.harbour-udaipur {
+  background: rgba(236, 72, 153, 0.12);
+  border: 1px solid rgba(236, 72, 153, 0.35);
+  color: #f472b6;
+}
+
 .deck-client-badge.aimers {
   background: rgba(74, 222, 128, 0.12);
   border: 1px solid rgba(74, 222, 128, 0.35);
@@ -2846,6 +2852,11 @@ button {
   box-shadow: 0 0 14px rgba(74, 222, 128, 0.4);
 }
 
+.channel-avatar-wrap.harbour-udaipur-glow {
+  border-color: #ec4899;
+  box-shadow: 0 0 14px rgba(236, 72, 153, 0.45);
+}
+
 .channel-avatar-wrap.custom-glow {
   border-color: #a855f7;
   box-shadow: 0 0 14px rgba(168, 85, 247, 0.4);
@@ -2950,6 +2961,11 @@ button {
 .channel-role-banner.custom {
   border-left-color: #a855f7;
   color: #d8b4fe;
+}
+
+.channel-role-banner.luxury {
+  border-left-color: #ec4899;
+  color: #fbcfe8;
 }
 
 .channel-card-desc {
